@@ -11,8 +11,14 @@ function App() {
     setSearch(event.target.value);
   };
 
-  console.log("Emoji List:", emojiList);
-  console.log("Search:", search);
+  const filteredEmojis = emojiList.filter((emoji) => {
+    const searchText = search.toLowerCase();
+
+    return (
+      emoji.title.toLowerCase().includes(searchText) ||
+      emoji.keywords.toLowerCase().includes(searchText)
+    );
+  });
 
   return (
     <main className="app">
@@ -24,6 +30,10 @@ function App() {
         value={search}
         onChange={handleSearchChange}
       />
+
+      <p>
+        Results: {filteredEmojis.length}
+      </p>
     </main>
   );
 }
