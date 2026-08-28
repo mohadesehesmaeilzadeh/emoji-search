@@ -1,33 +1,68 @@
 .app {
   min-height: 100vh;
+  padding: 50px 20px;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 
+  background-color: #f7f7f7;
+}
+
+.app h1 {
+  margin-bottom: 10px;
+
+  font-size: 42px;
   text-align: center;
 }
 
+.app > p {
+  margin-top: 0;
+  margin-bottom: 25px;
+
+  color: #666;
+  text-align: center;
+}
+
+/* Search */
+
 .search-bar {
   width: 100%;
-  max-width: 500px;
-  margin-top: 20px;
+  max-width: 600px;
 }
 
 .search-bar input {
   width: 100%;
-  padding: 14px 16px;
+
+  padding: 15px 18px;
+
+  border: 1px solid #ccc;
+  border-radius: 10px;
 
   font-size: 16px;
 
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  background-color: white;
 }
 
 .search-bar input:focus {
-  outline: 2px solid #222;
+  outline: none;
+
+  border-color: #222;
 }
+
+/* Result Count */
+
+.result-count {
+  width: 100%;
+  max-width: 700px;
+
+  margin-top: 20px;
+
+  font-size: 14px;
+  color: #777;
+}
+
+/* Emoji List */
 
 .emoji-list {
   width: 100%;
@@ -36,44 +71,86 @@
   display: flex;
   flex-direction: column;
 
-  gap: 10px;
+  gap: 12px;
 
   margin-top: 20px;
 }
+
+/* Emoji Card */
 
 .emoji-card {
   display: flex;
   align-items: center;
 
-  gap: 15px;
+  gap: 18px;
 
-  padding: 15px 20px;
+  padding: 16px 20px;
 
   background-color: white;
 
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  border: 1px solid #e2e2e2;
+  border-radius: 10px;
+
+  transition: 0.2s;
+}
+
+.emoji-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .emoji-symbol {
-  font-size: 30px;
+  min-width: 45px;
+
+  font-size: 32px;
+  text-align: center;
 }
 
 .emoji-title {
   font-size: 18px;
+  font-weight: 500;
 }
 
-.result-count {
-  margin-top: 20px;
-  font-size: 14px;
-  color: #666;
-}
+/* No Results */
 
 .no-results {
-  margin-top: 40px;
+  margin-top: 50px;
 
   font-size: 20px;
   font-weight: bold;
 
   text-align: center;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .app {
+    padding: 30px 15px;
+  }
+
+  .app h1 {
+    font-size: 34px;
+  }
+
+  .search-bar input {
+    padding: 13px 15px;
+
+    font-size: 15px;
+  }
+
+  .emoji-card {
+    padding: 14px 16px;
+
+    gap: 14px;
+  }
+
+  .emoji-symbol {
+    font-size: 28px;
+  }
+
+  .emoji-title {
+    font-size: 16px;
+  }
 }
