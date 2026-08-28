@@ -2,7 +2,9 @@ import { useState } from "react";
 
 import "./App.css";
 import emojiList from "./data/emojiList.json";
+
 import SearchBar from "./components/SearchBar";
+import EmojiList from "./components/EmojiList";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -34,6 +36,8 @@ function App() {
       <p>
         Results: {filteredEmojis.length}
       </p>
+
+      <EmojiList emojis={filteredEmojis} />
     </main>
   );
 }
