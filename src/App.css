@@ -62,3 +62,18 @@
 .emoji-title {
   font-size: 18px;
 }
+
+.result-count {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.no-results {
+  margin-top: 40px;
+
+  font-size: 20px;
+  font-weight: bold;
+
+  text-align: center;
+}

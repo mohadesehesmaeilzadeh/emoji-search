@@ -13,14 +13,18 @@ function App() {
     setSearch(event.target.value);
   };
 
-  const filteredEmojis = emojiList.filter((emoji) => {
-    const searchText = search.toLowerCase();
+  const normalizedSearch = search.trim().toLowerCase();
 
+  const filteredEmojis = emojiList.filter((emoji) => {
     return (
-      emoji.title.toLowerCase().includes(searchText) ||
-      emoji.keywords.toLowerCase().includes(searchText)
+      emoji.title.toLowerCase().includes(normalizedSearch) ||
+      emoji.keywords.toLowerCase().includes(normalizedSearch)
     );
   });
+
+  const displayedEmojis = normalizedSearch
+    ? filteredEmojis
+    : emojiList.slice(0, 20);
 
   return (
     <main className="app">
@@ -33,11 +37,19 @@ function App() {
         onChange={handleSearchChange}
       />
 
-      <p>
-        Results: {filteredEmojis.length}
-      </p>
+      {normalizedSearch && (
+        <p className="result-count">
+          Results: {filteredEmojis.length}
+        </p>
+      )}
 
-      <EmojiList emojis={filteredEmojis} />
+      {normalizedSearch && filteredEmojis.length === 0 ? (
+        <p className="no-results">
+          No emojis found 😢
+        </p>
+      ) : (
+        <EmojiList emojis={displayedEmojis} />
+      )}
     </main>
   );
 }
