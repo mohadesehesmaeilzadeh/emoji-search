@@ -1,6 +1,6 @@
 import EmojiCard from "./EmojiCard";
 
-function EmojiList({ emojis }) {
+function EmojiList({ emojis, onEmojiClick }) {
   return (
     <div className="emoji-list">
       {emojis.map((emoji, index) => (
@@ -8,6 +8,7 @@ function EmojiList({ emojis }) {
           key={index}
           symbol={emoji.symbol}
           title={emoji.title}
+          onClick={onEmojiClick}
         />
       ))}
     </div>

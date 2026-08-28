@@ -8,9 +8,20 @@ import EmojiList from "./components/EmojiList";
 
 function App() {
   const [search, setSearch] = useState("");
+  const [copiedEmoji, setCopiedEmoji] = useState("");
 
   const handleSearchChange = (event) => {
     setSearch(event.target.value);
+  };
+
+  const handleCopyEmoji = async (symbol) => {
+    await navigator.clipboard.writeText(symbol);
+
+    setCopiedEmoji(symbol);
+
+    setTimeout(() => {
+      setCopiedEmoji("");
+    }, 1500);
   };
 
   const normalizedSearch = search.trim().toLowerCase();
@@ -37,6 +48,12 @@ function App() {
         onChange={handleSearchChange}
       />
 
+      {copiedEmoji && (
+        <p className="copy-message">
+          {copiedEmoji} Copied! ✅
+        </p>
+      )}
+
       {normalizedSearch && (
         <p className="result-count">
           Results: {filteredEmojis.length}
@@ -48,7 +65,10 @@ function App() {
           No emojis found 😢
         </p>
       ) : (
-        <EmojiList emojis={displayedEmojis} />
+        <EmojiList
+          emojis={displayedEmojis}
+          onEmojiClick={handleCopyEmoji}
+        />
       )}
     </main>
   );
