@@ -1,38 +1,169 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app {
   min-height: 100vh;
+  padding: 50px 20px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+  background-color: #f7f7f7;
 }
 
-.App-link {
-  color: #61dafb;
+.app h1 {
+  margin-bottom: 10px;
+
+  font-size: 42px;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.app > p {
+  margin-top: 0;
+  margin-bottom: 25px;
+
+  color: #666;
+  text-align: center;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 600px;
+}
+
+.search-bar input {
+  width: 100%;
+
+  padding: 15px 18px;
+
+  border: 1px solid #ccc;
+  border-radius: 10px;
+
+  font-size: 16px;
+
+  background-color: white;
+}
+
+.search-bar input:focus {
+  outline: none;
+
+  border-color: #222;
+}
+
+.result-count {
+  width: 100%;
+  max-width: 700px;
+
+  margin-top: 20px;
+
+  font-size: 14px;
+  color: #777;
+}
+
+.emoji-list {
+  width: 100%;
+  max-width: 700px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+
+  margin-top: 20px;
+}
+
+.emoji-card {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 16px 20px;
+
+  background-color: white;
+
+  border: 1px solid #e2e2e2;
+  border-radius: 10px;
+
+  transition: 0.2s;
+}
+
+.emoji-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.emoji-symbol {
+  min-width: 45px;
+
+  font-size: 32px;
+  text-align: center;
+}
+
+.emoji-title {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.no-results {
+  margin-top: 50px;
+
+  font-size: 20px;
+  font-weight: bold;
+
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .app {
+    padding: 30px 15px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .app h1 {
+    font-size: 34px;
   }
+
+  .search-bar input {
+    padding: 13px 15px;
+
+    font-size: 15px;
+  }
+
+  .emoji-card {
+    padding: 14px 16px;
+
+    gap: 14px;
+  }
+
+  .emoji-symbol {
+    font-size: 28px;
+  }
+
+  .emoji-title {
+    font-size: 16px;
+  }
+}
+
+.emoji-card {
+  cursor: pointer;
+}
+
+.copy-message {
+  margin-top: 15px;
+
+  padding: 10px 16px;
+
+  background-color: white;
+
+  border: 1px solid #ddd;
+  border-radius: 8px;
+
+  font-weight: bold;
+}
+
+.emoji-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  border-color: #aaa;
 }
