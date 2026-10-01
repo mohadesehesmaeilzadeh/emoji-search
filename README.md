@@ -1,57 +1,62 @@
 # Emoji Search 🔎
 
-A simple real-time emoji search application built with React.
+## Overview
 
-## About
-
-Emoji Search allows users to search through a collection of emojis in real time.
-
-The application loads emoji data and filters the results as the user types.
-
-## Repository
-
-[View the project on GitHub](https://github.com/mohadesehesmaeilzadeh/emoji-search)
+Emoji Search is a lightweight React app for finding emojis by name or keyword
+and copying them to the clipboard. It uses a local emoji dataset, so searches
+are instant and require no API or backend.
 
 ## Features
 
-- Real-time emoji search
-- Search by title and keywords
-- Display emoji results
-- Result count
-- Empty search state
-- No result message
-- Copy emoji to clipboard
-- Loading state
-- Error handling
-- Responsive design
+- Real-time search by emoji title and keywords
+- One-click clipboard copying with accessible feedback
+- Result counts and a helpful empty state
+- Keyboard-accessible emoji cards and visible focus states
+- Responsive grid for desktop, tablet, and mobile
 
-## React Concepts
+## Tech Stack
 
-This project practices several React concepts:
+- React 19
+- Create React App (`react-scripts`)
+- JavaScript and CSS
+- Local JSON emoji data
+- GitHub Actions and GitHub Pages
 
-- Components
-- Props
-- useState
-- useEffect
-- Event Handling
-- Conditional Rendering
-- Array filter()
-- Array map()
-- API requests
+## Screenshot
 
-## Technologies
+![Emoji Search interface](docs/screenshots/emoji-search.png)
 
-- HTML
-- CSS
-- JavaScript
-- React
-- Create React App
-- Git
-- GitHub
+## Installation
 
-## Run the Project
-
-Install dependencies:
+Clone the repository and install the locked dependencies:
 
 ```bash
-npm install
+git clone https://github.com/mohadesehesmaeilzadeh/emoji-search.git
+cd emoji-search
+npm ci
+```
+
+Start the development server:
+
+```bash
+npm start
+```
+
+## Build
+
+Create an optimized production build:
+
+```bash
+npm run build
+```
+
+Create React App writes the deployable files to the `build/` directory. The
+project is configured for the `/emoji-search/` GitHub Pages base path.
+
+## Live Demo
+
+[Open Emoji Search on GitHub Pages](https://mohadesehesmaeilzadeh.github.io/emoji-search/)
+
+## Repository
+
+[github.com/mohadesehesmaeilzadeh/emoji-search](https://github.com/mohadesehesmaeilzadeh/emoji-search)
